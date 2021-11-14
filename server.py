@@ -7,11 +7,15 @@ STATIC_DIR = os.path.abspath('./static')
 app = Flask(__name__,template_folder=TEMPLATE_DIR, static_folder=STATIC_DIR)
 
 data = {
-    "test":"test"
+    "Page Header":"Jayant Manchanda"
 }
 @app.route("/")
-def hello_world():
+def landingPage():
     return render_template("index.html",data=data)
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 
 if __name__ == "__main__":
