@@ -6,30 +6,244 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to this Page</title>
-    <link href="{{ url_for('static', filename='/styles/index.css') }}" rel="stylesheet" type="text/css" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
+    <!--  -->
+
+    <link href="{{ url_for('static', filename='/styles/index.css') }}" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
-    <ul>
-       
-        {% for item in data %}
-            <li>{{item}}</li>
-        {% endfor %}
-        </ul>
 
-    <div><button onclick="c()">
-        Click
-    </button>
-</div>
+    <div class="page-body">
+
+        <!-- Navbar / header -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <div class="container-fluid">
+                <div class="name">
+                    <a class="navbar-brand" href="#">Jayant Manchanda</a>
+                    <p id="designation">Full Stack Developer | Sound Designer</p>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#work">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#msd">Music / Sound Design</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact" data-bs-toggle="modal"
+                                data-bs-target="#myModal">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="data-spy=" scroll" data-target="#navbar-example3" data-offset="0"">
+
+     
+
+        <!-- About -->
+        <div class=" container col-6 mt-5 mb-5" id="about">
+            <!-- <div class="row">
+                <div class="col ml-3"> -->
+            <div class="m-1 d-flex justify-content-center">
+                <img src="{{ url_for('static', filename='/assets/my_img.jpeg') }} "
+                    class="rounded-circle z-depth-2 shadow-lg bg-white rounded w-50 rounded" alt="100x100" id="my-img">
+            </div>
+            <div class="m-1 p-3 d-flex justify-content-center">
+                <!-- <p class="m-0 lead mb-4">ABOUT</p> -->
+                <p>
+                    I am New Delhi based Full stack developer, passionate about translating creative and abstract
+                    ideas into interactive and functional applications. When I am not coding, I am designing /
+                    composing sound for movies, games and art installations.
+                </p>
+            </div>
+
+        </div>
+
+
+
+        <!-- Work -->
+
+        <div class="container mt-5 mb-5" id="work">
+            <div class="d-flex justify-content-center">
+                <p class="h1">WORK</p>
+            </div>
+            <div class="row">
+                <div class="col-sm card m-2 p-0 shadow bg-white rounded w-50 ms-3 mt-5 m-0 rounded"
+                    style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='/assets/verber.png') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <p class="h5" id="work-heading">Verber</p>
+                            <i class="devicon-github-original colored ps-2"></i>
+                        </div>
+                        <p class="card-text p" id="work-des">Have you ever imagined how you would sound inside Taj
+                            Mahal or St pauls
+                            Cathederal or places with interesting sound that you might not have heard off while
+                            physically not being there ? This application lets you do that and add places that you might
+                            want to share. </p>
+                        <p class="card-text">
+                            <i class="devicon-react-original colored mr-2" id="react"><span
+                                    class="h-react">React</span></i>
+                            <i class="devicon-redux-original colored m-2"></i>
+                            <i class="devicon-materialui-plain colored"></i>
+                            <i class="devicon-nodejs-plain colored m-2"></i>
+                            <i class="devicon-postgresql-plain colored m-2"></i>
+                            <i class="devicon-sequelize-plain colored m-2"></i>
+                            <i class="devicon-heroku-original colored m-2"></i>
+
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-sm card m-2 p-0 shadow bg-white rounded w-50 ms-3 mt-5 m-0 rounded"
+                    style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='/assets/rr.png') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                        <p class="h5" id="work-heading">Reddit Reviews</p>
+                        <i class="devicon-github-original colored ps-2"></i>
+                    </div>
+                        <p class="card-text pb-5" id="work-des">A search engine to give you an overview of how good a
+                            product is based
+                            on a combination of knowledge of reddit's expert communities with deep(ish) learning</p>
+                        <p class="clard-text">
+                            <i class="devicon-vuejs-plain colored mr-2"></i>
+                            <i class="devicon-bootstrap-plain colored m-2"></i>
+                            <i class="devicon-python-plain colored m-2"></i>
+                            <i class="devicon-firebase-plain colored m-2"></i>
+                            <i class="devicon-pandas-original colored m-2"></i>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm card m-2 p-0 shadow bg-white rounded w-50 ms-3 mt-5 m-0 rounded"
+                    style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='/assets/audiogram.png') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                        <p class="h5" id="work-heading">Hubhopper Audiogram</p>
+                        <i class="devicon-github-original colored ps-2"></i>
+                        </div>
+                        <p class="card-text pb-5" id="work-des">Hubhopper's product tool where podcasters create custom
+                            audiograms for
+                            marketing campaigns on different social media platforms.</p>
+                        <p class="card-text pt-4">
+                            <i class="devicon-react-original colored mr-2"></i>
+                            <i class="devicon-bootstrap-plain colored m-2"></i>
+                            <i class="devicon-nodejs-plain colored m-2"></i>
+                            <i class="devicon-d3js-plain colored m-2"></i>
+                            <i class="devicon-docker-plain colored m-2"></i>
+                            <i class="devicon-kubernetes-plain colored m-2"></i>
+                            <i class="devicon-amazonwebservices-original colored"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music / Sound Design -->
+
+        <div class="container mt-5 mb-5" id="msd">
+            <div class="d-flex justify-content-center">
+                <p class="h1">Music / Sound Design</p>
+            </div>
+            <div class="row mt-5">
+                <iframe style="border: 0; width: 350px; height: 350px;" id="frame1"
+                    src="https://bandcamp.com/EmbeddedPlayer/track=3278605635/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/"
+                    seamless><a href="https://mjay.bandcamp.com/track/domplien">Domplien by Jayant
+                        Manchanda</a></iframe>
+                <iframe style="border: 0; width: 350px; height: 340px;" id="frame2"
+                    src="https://bandcamp.com/EmbeddedPlayer/album=940279478/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/"
+                    seamless><a href="https://songsforatiredcity.bandcamp.com/album/songs-for-a-tired-city">Songs For A
+                        Tired City by Songs For A Tired City</a></iframe>
+            </div>
+        </div>
+
+
+        <!-- Contact -->
+        <div class="container mt-5 mb-5" id="contact">
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-secondary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#myModal">Contact</button>
+            </div>
+
+            <!-- Form -->
+            <div class="modal " id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Contact</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/form" method="POST" id="submit-form">
+                                <div class="mb-3">
+                                    <label class="form-label required">Name*</label>
+                                    <input type="text" class="form-control" required data-validation>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label required">Email*</label>
+                                    <input type="email" class="form-control" required data-validation>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label required">Message*</label>
+                                    <textarea class="form-control" required data-validation></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-between">
+                            <div class="d-inline">
+                                <a href="https://github.com/manchandajayant"  target="_blank">
+                                    <i class="devicon-github-original colored "></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/jayantmanchanda/" target="_blank">
+                                    <i class="devicon-linkedin-plain colored ps-2"></i>
+                                </a>
+                            </div>
+                            <button type="submit" class="btn btn-outline-secondary" form="submit-form">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
 </body>
 
 
 <script>
-
-function c(){
-    console.log("hello")
-}
-
 </script>
+<!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<!-- JS -->
 <script src="{{ url_for('static', filename='/js/index.js') }}"></script>
+
 </html>

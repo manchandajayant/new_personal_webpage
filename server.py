@@ -1,6 +1,8 @@
 from flask import Flask,render_template
 import os
 
+from werkzeug.wrappers import request
+
 TEMPLATE_DIR = os.path.abspath('./templates')
 STATIC_DIR = os.path.abspath('./static')
 
@@ -16,6 +18,11 @@ def landingPage():
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+@app.route("/form",methods=["GET","POST"])
+def form():
+    print(request)
+    return render_template("index.html",data={request})
 
 
 if __name__ == "__main__":
